@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
@@ -6,6 +7,7 @@ import preact from "@astrojs/preact";
 import solidJs from "@astrojs/solid-js";
 import svelte from "@astrojs/svelte";
 import react from "@astrojs/react";
+import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,5 +18,6 @@ export default defineConfig({
     solidJs(),
     svelte(),
     react(),
+    vue(),
   ],
 });
