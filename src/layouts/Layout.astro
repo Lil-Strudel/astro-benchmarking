@@ -1,12 +1,21 @@
 ---
+interface Props {
+  framework: string;
+}
 
+const { framework } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Doing a benchmark of different frameworks in Astro"
+    />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Benchmarking</title>
   </head>
@@ -17,14 +26,13 @@
           <h2
             class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
           >
-            Results
+            Benchmarking {framework}
           </h2>
           <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
-            I implemented a simple click counter component in multiple languages
-            to compare bundle sizes in small js usecases.
+            This is a simple click counter in {framework}
           </p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            Here are the results:
+            <slot />
           </div>
         </div>
       </div>
