@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ClickSvelte from "../components/ClickSvelte.svelte";
+---
+
+<Layout framework="Svelte">
+  <ClickSvelte client:only="svelte" />
+</Layout>
