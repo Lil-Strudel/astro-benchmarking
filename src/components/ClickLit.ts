@@ -1,9 +1,10 @@
 import { LitElement, html } from "lit";
-import { state } from "lit/decorators.js";
 
-export class Click extends LitElement {
-  static properties = {
-    _cound: { state: true },
+export class ClickLit extends LitElement {
+  _count: number;
+
+  static override properties = {
+    _count: { state: true },
   };
 
   constructor() {
@@ -16,8 +17,8 @@ export class Click extends LitElement {
     this.requestUpdate();
   };
 
-  render() {
-    return html` <div class="flex flex-col justify-center">
+  override render() {
+    return html`<div class="flex flex-col justify-center">
       <h1 class="text-xl">${this._count}</h1>
       <button
         @click=${this.incrementCount}
@@ -29,4 +30,4 @@ export class Click extends LitElement {
   }
 }
 
-customElements.define("my-click", Click);
+customElements.define("my-click", ClickLit);
